@@ -3,7 +3,7 @@
 // pegar os dados da tela
 session_start();
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha = md5($_POST["senha"]);
 
 // montar a instrução de verificar se o usuário existe
 $sql ="select * from usuario where email = '".$email."' and senha = '".$senha."'";
